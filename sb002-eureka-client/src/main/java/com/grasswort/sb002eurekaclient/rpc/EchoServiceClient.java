@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date 2020/1/10
  * @blame Java Team
  */
-@FeignClient("eureka-server")
+@FeignClient(contextId = "echo", name = "eureka-server")
 public interface EchoServiceClient {
 
     @GetMapping("/echo/{message}")

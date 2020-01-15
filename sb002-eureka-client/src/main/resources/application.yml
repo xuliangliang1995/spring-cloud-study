@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 10002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10001/eureka/
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+  # 断路器
+  hystrix:
+    enabled: true
+  # properties 配置属性优于 @Configuration 类
+  client:
+    config:
+      eureka-server:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+      useGzipDecoder: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          #strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 10000
