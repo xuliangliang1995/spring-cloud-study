@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 /**
  * @author xuliangliang
  * @Classname BookController.java
@@ -24,13 +22,9 @@ public class BookController {
     @Autowired
     BookServiceClient bookServiceClient;
 
-    @GetMapping
-    public List<Book> books() {
-        return bookServiceClient.books();
-    }
-
     @GetMapping("/{bookId}")
     public Book book(@PathVariable("bookId") Long bookId) {
         return bookServiceClient.book(bookId);
     }
+
 }

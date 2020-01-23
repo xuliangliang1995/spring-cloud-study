@@ -1,5 +1,6 @@
 package com.grasswort.sb002eurekaclient.rpc;
 
+import com.grasswort.sb002eurekaclient.configuration.FooConfiguration;
 import com.grasswort.sb002eurekaclient.entity.Book;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 @FeignClient(contextId = "book", name = "eureka-server",
         //fallback = BookServiceClientHystrixFallback.class
+        configuration = FooConfiguration.class,
         fallbackFactory = BookServiceClientHystrixFallbackFactory.class
 )
 public interface BookServiceClient {

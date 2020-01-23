@@ -7,6 +7,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:10001/eureka/
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
 feign:
   okhttp:
     enabled: true
@@ -40,6 +44,11 @@ hystrix:
           #strategy: SEMAPHORE
           thread:
             timeoutInMilliseconds: 10000
+
+# 负载均衡配置
+#eureka-server:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
 
 
 

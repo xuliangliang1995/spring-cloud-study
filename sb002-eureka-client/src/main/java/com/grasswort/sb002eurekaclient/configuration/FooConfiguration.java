@@ -1,10 +1,8 @@
 package com.grasswort.sb002eurekaclient.configuration;
 
-import feign.Contract;
 import feign.Logger;
 import feign.auth.BasicAuthRequestInterceptor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * @author xuliangliang
@@ -13,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @Date 2020/1/14
  * @blame Java Team
  */
-@Configuration
+//@Configuration
 public class FooConfiguration {
 
     @Bean
@@ -33,5 +31,6 @@ public class FooConfiguration {
     public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
         return new BasicAuthRequestInterceptor("user", "password");
     }
+
 
 }

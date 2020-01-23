@@ -14,8 +14,8 @@ import org.springframework.web.client.RestTemplate;
  * @Date 2020/1/21
  * @blame Java Team
  */
-@RestController
-@RequestMapping("/v2/books")
+//@RestController
+//@RequestMapping("/v2/books")
 public class BookControllerV2 {
 
     private final RestTemplate restTemplate;
